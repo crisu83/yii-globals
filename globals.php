@@ -157,7 +157,7 @@ function md($text)
  */
 function img($src, $alt = '', $htmlOptions = array())
 {
-	return CHtml::image($src, $alt, $htmlOptions);
+	return CHtml::image(bu($src), $alt, $htmlOptions);
 }
 
 /**

@@ -92,7 +92,7 @@ function t($category, $message, $params = array(), $source = null, $language = n
  * @param string $url
  * @return string
  */
-function bu($url = '')
+function baseUrl($url = '')
 {
 	static $baseUrl;
 	if (!isset($baseUrl))
@@ -123,11 +123,11 @@ function e($text)
 }
 
 /**
- * Returns the given text as purified HTML.
+ * Purifies the given HTML.
  * @param $text
  * @return string
  */
-function purify($text)
+function ph($text)
 {
 	static $purifier;
 	if (!isset($purifier))
@@ -157,7 +157,7 @@ function md($text)
  */
 function img($src, $alt = '', $htmlOptions = array())
 {
-	return CHtml::image(bu($src), $alt, $htmlOptions);
+	return CHtml::image(baseUrl($src), $alt, $htmlOptions);
 }
 
 /**
@@ -191,7 +191,7 @@ function url($route, $params = array(), $ampersand = '&')
  * @param string $ampersand
  * @return mixed
  */
-function aurl($route, $params = array(), $ampersand = '&')
+function absoluteUrl($route, $params = array(), $ampersand = '&')
 {
 	return Yii::app()->urlManager->createAbsoluteUrl($route, $params, $ampersand);
 }

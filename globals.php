@@ -101,18 +101,6 @@ function baseUrl($url = '')
 }
 
 /**
- * Returns whether the logged in user has access to the given operation.
- * @param $operation
- * @param array $params
- * @param bool $allowCaching
- * @return mixed
- */
-function checkAccess($operation, $params = array(), $allowCaching = true)
-{
-	return Yii::app()->user->checkAccess($operation, $params, $allowCaching);
-}
-
-/**
  * Escapes the given string using CHtml::encode().
  * @param $text
  * @return string
